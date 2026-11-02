@@ -1,0 +1,19 @@
+name: OpenMV V1 host checks
+on:
+  push:
+    branches: [main, feat/openmv-vision-v1]
+  pull_request:
+jobs:
+  pure-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate config JSON
+        run: python -m json.tool config.json > /dev/null
+      - name: Compile Python syntax (not MicroPython runtime)
+        run: python -m compileall -q main.py vision_v1.py recorder.py tests
+      - name: Host unit tests
+        run: python -m unittest discover -s tests -v
