@@ -1,0 +1,26 @@
+{
+  "_note": "OpenMV V1 development parameters. timing.delay_ms is a provisional bench value; validate on hardware.",
+  "camera": {
+    "readout_window": [0, 700, 640, 480],
+    "exposure_us": 800,
+    "gain_db": 20,
+    "warmup_ms": 1500,
+    "sleep_until_trigger": true
+  },
+  "vision": {
+    "lab_threshold": [9, 100, -102, -25, 0, 127],
+    "roi_margin_x": 40,
+    "roi_margin_y": 40,
+    "draw_overlay": false
+  },
+  "timing": {
+    "delay_ms": 1000,
+    "search_ms": 2000,
+    "status_interval_ms": 50
+  },
+  "recording": {
+    "enabled": false,
+    "every_n_frames": 5,
+    "basename": "record"
+  }
+}

@@ -1,0 +1,11 @@
+# Generated OpenMV recordings and flight/debug outputs
+*.avi
+*.mjpeg
+*.csv
+*.jsonl
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.idea/
+.vscode/
